@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Classes\Payment;
+namespace App\Classes\Payment\Data;
+
+use App\Classes\Payment\PaymentFactory;
 
 class Uapay extends PaymentFactory{
     public function getImage(){
