@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
-use App\Classes\Payments\PaymentFactory;
 
 class ArticleController extends Controller
 {
@@ -25,7 +24,7 @@ class ArticleController extends Controller
             /*
                 Factory payments
             */
-            $paymentType = PaymentFactory::initial("\App\Classes\Payments\\".ucfirst($article->payment_type));
+            $paymentType = \App\Classes\Payments\PaymentFactory::initial("\App\Classes\Payments\\".ucfirst($article->payment_type));
             $payment = $paymentType;
         }
 
