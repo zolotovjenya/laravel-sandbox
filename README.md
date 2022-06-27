@@ -6,3 +6,7 @@
 <h2>Test Units</h2>
 
 <p><u>tests/Unit/ArticleTest</u></p>
+
+<h2>Migrations</h2>
+
+<p><u>database/migrations</u></p>
