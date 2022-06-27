@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
-use App\Classes\Payments\Basic\ArticlePayments;
+use App\Classes\Payments\PaymentFactory;
 
 class ArticleController extends Controller
 {
@@ -23,11 +23,12 @@ class ArticleController extends Controller
 
         if($article){
             /*
-                Factory article payments
+                Factory payments
             */
-            $payment = new ArticlePayments($article->payment_type);
+            $paymentType = PaymentFactory::initial("\App\Classes\Payments\\".ucfirst($article->payment_type));
+            $payment = $paymentType;
         }
 
-        return view('articles.article', ['article' => $article, 'payment' => $payment->getImage()]);
+        return view('articles.article', ['article' => $article, 'payment' => $payment]);
     }
 }

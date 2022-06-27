@@ -10,13 +10,6 @@ class Article extends Model
 {   
     use HasFactory;
 
-    public function getPaymentTitleAttribute(){
-        /* Use Payment factory */
-        $payment = new ArticlePayments($this->attributes['payment_type']);
-
-        return $payment->getTitle();
-    }
-
     public function cutString(string $source, int $limit): string{
         $len = strlen($source);
 

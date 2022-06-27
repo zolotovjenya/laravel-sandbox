@@ -12,10 +12,10 @@
         <td>{{$article->id}}</td>
         <td>{{$article->title}}</td>
         <td>{{$article->content}}</td>
-        <td>{{$article->paymentTitle}}</td>
+        <td>{{$payment->getTitle()}}</td>
     </tr>
     <tr>
-        <td colspan="5" align="center"><img src="{{$payment}}" width="400" /></td>
+        <td colspan="5" align="center"><img src="{{$payment->getImage()}}" width="400" /></td>
     </tr>
 </table>
 @endsection
