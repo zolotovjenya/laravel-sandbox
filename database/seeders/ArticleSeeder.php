@@ -18,17 +18,23 @@ class ArticleSeeder extends Seeder
             [ 
                 'title' => 'Test1',
                 'content' => 'Content1',
-                'payment_type' => 'stripe'
+                'payment_type' => 'stripe',
+                'url' => 'test1',
+                'sponsor' => 'hieneken'
             ],
             [ 
                 'title' => 'Test2',
                 'content' => 'Content2',
-                'payment_type' => 'worldpay'
+                'payment_type' => 'worldpay',
+                'url' => 'test2',
+                'sponsor' => 'umbro'
             ], 
             [ 
                 'title' => 'Test3',
                 'content' => 'Content3',
-                'payment_type' => 'uapay'
+                'payment_type' => 'uapay',
+                'url' => 'test3',
+                'sponsor' => 'huawei'
             ],
         ];
 
@@ -36,7 +42,9 @@ class ArticleSeeder extends Seeder
             Article::create([
                'title' => $article['title'],
                'content' => $article['content'],
-               'payment_type' => $article['payment_type']
+               'payment_type' => $article['payment_type'],
+               'url' => $article['url'],
+               'sponsor' => $article['sponsor']
             ]);
         }
     }
