@@ -24,7 +24,7 @@ class ArticleController extends Controller
             /*
                 Payments Factory
             */
-            $paymentType = \App\Classes\Payment\PaymentFactory::initial("\App\Classes\Payment\\".ucfirst($article->payment_type));
+            $paymentType = \App\Classes\Payment\PaymentFactory::initial("\App\Classes\Payment\Data\\".ucfirst($article->payment_type));
             $payment = $paymentType;
 
             /*
