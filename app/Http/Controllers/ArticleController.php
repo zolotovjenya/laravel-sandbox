@@ -22,12 +22,18 @@ class ArticleController extends Controller
 
         if($article){
             /*
-                Factory payments
+                Payments Factory
             */
-            $paymentType = \App\Classes\Payments\PaymentFactory::initial("\App\Classes\Payments\\".ucfirst($article->payment_type));
+            $paymentType = \App\Classes\Payment\PaymentFactory::initial("\App\Classes\Payment\\".ucfirst($article->payment_type));
             $payment = $paymentType;
+
+            /*
+                Abstract Sponsor Factory
+            */
+            $sponsorClass = '\App\Classes\Sponsor\Factory\\'.ucfirst($article->sponsor).'Factory';
+            $sponsor = new $sponsorClass();
         }
 
-        return view('articles.article', ['article' => $article, 'payment' => $payment]);
+        return view('articles.article', ['article' => $article, 'payment' => $payment, 'sponsor' => $sponsor]);
     }
 }
