@@ -11,6 +11,7 @@ class ArticleController extends Controller
 {
     /*
         Singleton example
+        $data -  has 2 keys
     */
     public function articles(){
         $article = ArticleExtendedSingleton::getInstance();
