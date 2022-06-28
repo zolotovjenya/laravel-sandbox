@@ -4,6 +4,8 @@ namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use App\Models\Article;
+use App\Facade\ArticleFacade;
+use App\Classes\ArticleSingleton\ArticleExtendedSingleton;
 
 class ArticleTest extends TestCase
 {
