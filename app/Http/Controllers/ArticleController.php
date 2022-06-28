@@ -9,17 +9,17 @@ use App\Facade\ArticleFacade;
 class ArticleController extends Controller
 {
     public function articles(){
-        $article = new Article();
+        $articleFacade = new ArticleFacade();
 
-        $data = $article::all();
-
+        $data = $articleFacade->getAllArticles();
+        
         return view('welcome', ['article' => $data]);
     }
 
-    public function article($id){
+    public function article(Request $request){        
         $articleFacade = new ArticleFacade();
 
-        $data = $articleFacade->getArticle($id);
+        $data = $articleFacade->getArticle($request);
 
         return view('articles.article', [
             'article' => $data['article'], 
