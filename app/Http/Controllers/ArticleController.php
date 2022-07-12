@@ -15,7 +15,7 @@ class ArticleController extends Controller
     */
     public function articles(){
         $article = ArticleExtendedSingleton::getInstance();
-        $article->setAllArticles(Article::all());
+        $article->setAllArticles(Article::paginate(2));
         $data = $article->getAllArticles();
 
         $article = ArticleExtendedSingleton::getInstance();
