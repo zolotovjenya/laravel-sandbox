@@ -4,6 +4,7 @@
 <p><u>app/Classes/Sponsor/</u> - Abstract Factory</p>
 <p><u>app/Classes/ArticleSingleton/</u> - Singleton</p>
 <p><u>app/Facade/</u> - Facades</p>
+<p><u>app/Providers/PaymentServiceProvider</u> - Dependency injection Payment Interface</p>
 
 <h2>Test Units</h2>
 
