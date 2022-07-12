@@ -3,6 +3,7 @@
 namespace App\Facade;
 
 use App\Models\Article;
+use App;
 use Illuminate\Support\Facades\Validator;
 use App\Classes\ArticleSingleton\ArticleExtendedSingleton;
 
@@ -21,13 +22,13 @@ class ArticleFacade{
 
             if($article){
                 /*
-                    Payments Factory
+                    Payments Factory called from PaymentServiceProvider like dependency injection
                 */
-                $paymentType = \App\Classes\Payment\PaymentFactory::initial("\App\Classes\Payment\Data\\".ucfirst($article->payment_type));
+                $paymentType = App::make('\App\Classes\Payment\PaymentFactory', [$article->payment_type]);
                 $payment = $paymentType;
 
                 /*
-                    Abstract Sponsor Factory
+                    Abstract Sponsor Factorys
                 */
                 $sponsorClass = '\App\Classes\Sponsor\Factory\\'.ucfirst($article->sponsor).'Factory';
                 $sponsor = new $sponsorClass();
