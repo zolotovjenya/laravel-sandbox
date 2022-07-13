@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\ArticleController@articles');
 
 Route::get('/article/{id}', 'App\Http\Controllers\ArticleController@article');
+
+Route::get('/patterns/observer', 'App\Http\Controllers\PatternController@observer');
