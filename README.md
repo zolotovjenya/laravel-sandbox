@@ -5,6 +5,7 @@
 <p><u>app/Classes/ArticleSingleton/</u> - Singleton</p>
 <p><u>app/Facade/</u> - Facades</p>
 <p><u>app/Providers/PaymentServiceProvider</u> - Dependency injection Payment Interface</p>
+<p><u>app/Classes/ArticleObserver</u> - Payment Observers</p>
 
 <h2>Test Units</h2>
 
