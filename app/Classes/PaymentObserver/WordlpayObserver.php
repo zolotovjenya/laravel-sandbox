@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Classes\ArticleObserver;
+namespace App\Classes\PaymentObserver;
 
-class ArticleWordlpayObserver implements \SplObserver
+class WordlpayObserver implements \SplObserver
 {
     public function update(\SplSubject $subject): string
     {

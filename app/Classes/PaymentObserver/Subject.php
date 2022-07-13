@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Classes\ArticleObserver;
+namespace App\Classes\PaymentObserver;
 
 class Subject implements \SplSubject
 {

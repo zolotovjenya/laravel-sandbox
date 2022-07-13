@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Classes\ArticleObserver;
+namespace App\Classes\PaymentObserver;
 
-class ArticleStripeObserver implements \SplObserver
+class StripeObserver implements \SplObserver
 {
     public function update(\SplSubject $subject): string
     {

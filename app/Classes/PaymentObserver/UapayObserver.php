@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Classes\ArticleObserver;
+namespace App\Classes\PaymentObserver;
 
-class ArticleUapayObserver implements \SplObserver
+class UapayObserver implements \SplObserver
 {
     public function update(\SplSubject $subject)
     {

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Classes\ArticleObserver\Subject;
-use App\Classes\ArticleObserver\ArticleStripeObserver;
-use App\Classes\ArticleObserver\ArticleWordlpayObserver;
-use App\Classes\ArticleObserver\ArticleUapayObserver;
+use App\Classes\PaymentObserver\Subject;
+use App\Classes\PaymentObserver\StripeObserver;
+use App\Classes\PaymentObserver\WordlpayObserver;
+use App\Classes\PaymentObserver\UapayObserver;
 use Illuminate\Support\Arr;
 
 class PatternController extends Controller{
@@ -15,13 +15,13 @@ class PatternController extends Controller{
 
         $subject = new Subject();
 
-        $stripe = new ArticleStripeObserver();
+        $stripe = new StripeObserver();
         $subject->attach($stripe);
 
-        $worldpay = new ArticleWordlpayObserver();
+        $worldpay = new WordlpayObserver();
         $subject->attach($worldpay);
 
-        $uapay = new ArticleUapayObserver();
+        $uapay = new UapayObserver();
         $subject->attach($uapay);
 
         $res[0] = $subject->notify();
