@@ -22,7 +22,7 @@ class ArticleController extends Controller
         $article->setAllArticles(['faker' => []]);
         $data = $article->getAllArticles();
         
-        return view('welcome', ['article' => $data[0]]);
+        return view('welcome', ['articles' => $data[0]]);
     }
 
     public function article(Request $request){        
