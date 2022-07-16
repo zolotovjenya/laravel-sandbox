@@ -12,6 +12,7 @@
 
 <h2>Feature Tests</h2>
 <p><u>./tests/Feature/HomePageTest.php</u></p>
+<p><u>./tests/Feature/ApiTest.php</u></p>
 
 <h2>Migrations</h2>
 <p><u>./database/migrations</u></p>
