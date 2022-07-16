@@ -14,7 +14,7 @@ class ArticleSeeder extends Seeder
      */
     public function run()
     {
-        $articles = [ 
+        /*$articles = [ 
             [ 
                 'title' => 'Test1',
                 'content' => 'Content1',
@@ -46,6 +46,8 @@ class ArticleSeeder extends Seeder
                'url' => $article['url'],
                'sponsor' => $article['sponsor']
             ]);
-        }
+        }*/
+
+        Article::factory(3)->create();
     }
 }
