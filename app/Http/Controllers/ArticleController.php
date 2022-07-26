@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Facade\ArticleFacade;
-use App\Classes\ArticleSingleton\ArticleExtendedSingleton;
 
 class ArticleController extends Controller
 {
@@ -13,16 +12,10 @@ class ArticleController extends Controller
         Singleton example
         $data -  has 2 keys
     */
-    public function articles(){
-        $article = ArticleExtendedSingleton::getInstance();
-        $article->setAllArticles(Article::paginate(2));
-        $data = $article->getAllArticles();
-
-        $article = ArticleExtendedSingleton::getInstance();
-        $article->setAllArticles(['faker' => []]);
-        $data = $article->getAllArticles();
+    public function articles(Request $req){
+        $articles = Article::getCachedArticles($req->page);
         
-        return view('welcome', ['articles' => $data[0]]);
+        return view('welcome', ['articles' => $articles]);
     }
 
     public function article(Request $request){        
