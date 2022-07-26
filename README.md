@@ -16,3 +16,6 @@
 
 <h2>Migrations</h2>
 <p><u>./database/migrations</u></p>
+
+<h2>Redis</h2>
+<p>Used Redis like cache for articles collection</p>
